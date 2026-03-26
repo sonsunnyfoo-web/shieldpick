@@ -347,7 +347,7 @@ const Header = ({ onNav }) => (
     <div style={{ maxWidth:1140,margin:"0 auto",padding:"14px 24px",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
       <div onClick={()=>onNav("home")} style={{ cursor:"pointer",display:"flex",alignItems:"center",gap:8 }}>
         <div style={{ width:28,height:28,background:"var(--ac)",borderRadius:6,display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,color:"#0A0E17",fontWeight:800,fontFamily:"var(--fh)" }}>S</div>
-        <span style={{ fontFamily:"var(--fh)",fontSize:20,fontWeight:800,color:"#E8ECF2",letterSpacing:"-0.5px" }}>ShieldRanked</span>
+        <span style={{ fontFamily:"var(--fh)",fontSize:20,fontWeight:800,color:"#E8ECF2",letterSpacing:"-0.5px" }}>ShieldPick</span>
       </div>
       <nav style={{ display:"flex",gap:6,alignItems:"center" }}>
         {["VPNs","Antivirus","Passwords","Guides"].map(t=>(
@@ -431,14 +431,14 @@ const Footer = () => (
           <span key={t} style={{ fontFamily:"var(--fh)",fontSize:13,color:"#5A6478",cursor:"pointer" }}>{t}</span>
         ))}
       </div>
-      <div style={{ fontFamily:"var(--fh)",fontSize:12,color:"#5A6478" }}>© 2026 ShieldRanked. All rights reserved.</div>
-      <div style={{ fontFamily:"var(--fh)",fontSize:12,color:"#5A6478",maxWidth:600,margin:"12px auto 0",lineHeight:1.5 }}>ShieldRanked is reader-supported. When you buy through links on our site, we may earn an affiliate commission. This does not influence our editorial recommendations.</div>
+      <div style={{ fontFamily:"var(--fh)",fontSize:12,color:"#5A6478" }}>© 2026 ShieldPick. All rights reserved.</div>
+      <div style={{ fontFamily:"var(--fh)",fontSize:12,color:"#5A6478",maxWidth:600,margin:"12px auto 0",lineHeight:1.5 }}>ShieldPick is reader-supported. When you buy through links on our site, we may earn an affiliate commission. This does not influence our editorial recommendations.</div>
     </div>
   </footer>
 );
 
 // --- MAIN APP ---
-export default function ShieldRanked() {
+export default function ShieldPick() {
   const [page, setPage] = useState("home");
   const [showPopup, setShowPopup] = useState(false);
   useEffect(()=>{const t=setTimeout(()=>setShowPopup(true),20000);return()=>clearTimeout(t);},[]);
