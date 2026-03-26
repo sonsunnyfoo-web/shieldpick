@@ -25,11 +25,11 @@ const ARTICLES = [
         <table>
           <thead><tr><th>VPN</th><th>Best For</th><th>Price</th><th>Score</th></tr></thead>
           <tbody>
-            <tr><td class="product-name">NordVPN</td><td>Overall best</td><td>$3.09/mo</td><td class="score">9.6</td></tr>
-            <tr><td class="product-name">Surfshark</td><td>Best value</td><td>$2.49/mo</td><td class="score">9.2</td></tr>
-            <tr><td class="product-name">ExpressVPN</td><td>Streaming</td><td>$6.67/mo</td><td class="score">9.0</td></tr>
-            <tr><td class="product-name">ProtonVPN</td><td>Privacy-first</td><td>$4.49/mo</td><td class="score">8.8</td></tr>
-            <tr><td class="product-name">Private Internet Access</td><td>Budget + power users</td><td>$2.03/mo</td><td class="score">8.5</td></tr>
+            <tr><td class="product-name">NordVPN</td><td>Overall best</td><td>$3.39/mo</td><td class="score">9.6</td></tr>
+            <tr><td class="product-name">Surfshark</td><td>Best value</td><td>$1.99/mo</td><td class="score">9.2</td></tr>
+            <tr><td class="product-name">ExpressVPN</td><td>Streaming</td><td>$3.49/mo</td><td class="score">9.0</td></tr>
+            <tr><td class="product-name">ProtonVPN</td><td>Privacy-first</td><td>$3.99/mo</td><td class="score">8.8</td></tr>
+            <tr><td class="product-name">Private Internet Access</td><td>Budget + power users</td><td>$2.19/mo</td><td class="score">8.5</td></tr>
           </tbody>
         </table>
       </div>
@@ -45,10 +45,10 @@ const ARTICLES = [
             <div><span class="pro">✓ Fastest speeds in testing</span><span class="pro">✓ Works with Netflix, BBC iPlayer, Disney+</span><span class="pro">✓ Independently audited no-logs policy</span></div>
             <div><span class="con">✗ Occasional slow connection times</span><span class="con">✗ Premium tier needed for all features</span></div>
           </div>
-          <a href="#affiliate" class="btn-aff">Get NordVPN — 72% Off →</a>
+          <a href="#affiliate" class="btn-aff">Get NordVPN — 74% Off →</a>
         </div>
       </div>
-      <p>NordVPN runs 6,400+ servers across 111 countries, giving you massive flexibility for both speed and geo-unblocking. In our speed tests from the US, we averaged 850 Mbps on nearby servers and 400+ Mbps internationally — far ahead of most competitors.</p>
+      <p>NordVPN runs 7,200+ servers across 111 countries, giving you massive flexibility for both speed and geo-unblocking. In our speed tests from the US, we averaged 850 Mbps on nearby servers and 400+ Mbps internationally — far ahead of most competitors.</p>
       <p>Their NordLynx protocol (based on WireGuard) is the secret sauce behind these speeds. The kill switch worked flawlessly in testing, and we detected zero DNS or WebRTC leaks across 50+ test sessions.</p>
 
       <h2>2. Surfshark — Best Value</h2>
@@ -59,13 +59,13 @@ const ARTICLES = [
           <div class="product-subtitle">Best Budget VPN — Unlimited Devices</div>
           <p>Surfshark offers unlimited simultaneous connections at the lowest price point we tested. A strong choice for families or anyone with multiple devices.</p>
           <div class="pros-cons">
-            <div><span class="pro">✓ Unlimited device connections</span><span class="pro">✓ Cheapest long-term plan at $2.49/mo</span><span class="pro">✓ CleanWeb ad blocker included</span></div>
+            <div><span class="pro">✓ Unlimited device connections</span><span class="pro">✓ Cheapest long-term plan at $1.99/mo</span><span class="pro">✓ CleanWeb ad blocker included</span></div>
             <div><span class="con">✗ Speeds slightly below NordVPN</span><span class="con">✗ Smaller server network (3,200+)</span></div>
           </div>
-          <a href="#affiliate" class="btn-aff">Get Surfshark — 81% Off →</a>
+          <a href="#affiliate" class="btn-aff">Get Surfshark — 87% Off →</a>
         </div>
       </div>
-      <p>Surfshark's unlimited device policy is a game-changer. Most VPNs limit you to 5-8 devices. With Surfshark, you can protect your entire household — phones, laptops, tablets, smart TVs, routers — all on one plan at $2.49/month.</p>
+      <p>Surfshark's unlimited device policy is a game-changer. Most VPNs limit you to 5-8 devices. With Surfshark, you can protect your entire household — phones, laptops, tablets, smart TVs, routers — all on one plan at $1.99/month.</p>
 
       <h2>3. ExpressVPN — Best for Streaming</h2>
       <div class="product-box">
@@ -76,9 +76,9 @@ const ARTICLES = [
           <p>ExpressVPN is the most consistently reliable VPN for accessing geo-restricted content. It works with every major streaming platform in our testing.</p>
           <div class="pros-cons">
             <div><span class="pro">✓ Works with every streaming service tested</span><span class="pro">✓ Excellent apps across all platforms</span><span class="pro">✓ TrustedServer (RAM-only) technology</span></div>
-            <div><span class="con">✗ Most expensive option at $6.67/mo</span><span class="con">✗ Limited to 8 simultaneous connections</span></div>
+            <div><span class="con">✗ Most expensive option at $3.49/mo</span><span class="con">✗ Limited to 8 simultaneous connections</span></div>
           </div>
-          <a href="#affiliate" class="btn-aff">Get ExpressVPN — 49% Off →</a>
+          <a href="#affiliate" class="btn-aff">Get ExpressVPN — 73% Off →</a>
         </div>
       </div>
 
@@ -126,7 +126,7 @@ const ARTICLES = [
           <thead><tr><th>Category</th><th>NordVPN</th><th>Surfshark</th><th>Winner</th></tr></thead>
           <tbody>
             <tr><td>Speed</td><td>850 Mbps avg</td><td>720 Mbps avg</td><td class="score">NordVPN</td></tr>
-            <tr><td>Price</td><td>$3.09/mo</td><td>$2.49/mo</td><td class="score">Surfshark</td></tr>
+            <tr><td>Price</td><td>$3.39/mo</td><td>$1.99/mo</td><td class="score">Surfshark</td></tr>
             <tr><td>Devices</td><td>10</td><td>Unlimited</td><td class="score">Surfshark</td></tr>
             <tr><td>Servers</td><td>6,400+</td><td>3,200+</td><td class="score">NordVPN</td></tr>
             <tr><td>Streaming</td><td>Excellent</td><td>Excellent</td><td class="score">Tie</td></tr>
@@ -139,14 +139,14 @@ const ARTICLES = [
       <p>NordVPN's NordLynx protocol consistently delivered faster speeds in our testing. On nearby servers, NordVPN averaged 850 Mbps versus Surfshark's 720 Mbps. For international connections, the gap was even wider.</p>
       
       <h2>Price: Surfshark Wins</h2>
-      <p>Surfshark is simply cheaper. At $2.49/month for the 2-year plan versus NordVPN's $3.09/month, you save about $15/year. Plus, Surfshark includes unlimited device connections — NordVPN limits you to 10.</p>
+      <p>Surfshark is simply cheaper. At $1.99/month for the 2-year plan versus NordVPN's $3.39/month, you save about $15/year. Plus, Surfshark includes unlimited device connections — NordVPN limits you to 10.</p>
       
       <h2>Our Recommendation</h2>
       <p><strong>Choose NordVPN if:</strong> You want the fastest speeds, largest server network, and most advanced features. Best for individuals and power users.</p>
       <p><strong>Choose Surfshark if:</strong> You want the best value, need unlimited devices (families), and want solid performance at a lower price.</p>
       <div class="cta-row">
-        <a href="#affiliate" class="btn-aff">Get NordVPN — 72% Off →</a>
-        <a href="#affiliate" class="btn-aff btn-aff-alt">Get Surfshark — 81% Off →</a>
+        <a href="#affiliate" class="btn-aff">Get NordVPN — 74% Off →</a>
+        <a href="#affiliate" class="btn-aff btn-aff-alt">Get Surfshark — 87% Off →</a>
       </div>
     `
   },
@@ -233,8 +233,8 @@ const ARTICLES = [
       <p>If you use public Wi-Fi, want streaming access, or care about ISP privacy, a VPN is worth the $3/month. If you're on a secure home network and don't care about geo-restrictions, you can probably skip it.</p>
       <p>If you do want one, we recommend <strong>NordVPN</strong> for the best overall experience or <strong>Surfshark</strong> for the best value.</p>
       <div class="cta-row">
-        <a href="#affiliate" class="btn-aff">Get NordVPN — 72% Off →</a>
-        <a href="#affiliate" class="btn-aff btn-aff-alt">Get Surfshark — 81% Off →</a>
+        <a href="#affiliate" class="btn-aff">Get NordVPN — 74% Off →</a>
+        <a href="#affiliate" class="btn-aff btn-aff-alt">Get Surfshark — 87% Off →</a>
       </div>
     `
   },
@@ -300,7 +300,7 @@ const ARTICLES = [
       
       <h2>Layer 3: VPN</h2>
       <p>A VPN encrypts your internet traffic and hides your IP address. Essential for public Wi-Fi and ISP privacy. We recommend <strong>NordVPN</strong> or <strong>ProtonVPN</strong>.</p>
-      <a href="#affiliate" class="btn-aff" style="margin-bottom:24px">Get NordVPN — 72% Off →</a>
+      <a href="#affiliate" class="btn-aff" style="margin-bottom:24px">Get NordVPN — 74% Off →</a>
       
       <h2>Layer 4: Email Privacy</h2>
       <p>Gmail reads your emails for ad targeting. Switch to <strong>ProtonMail</strong> for encrypted email that even Proton can't read. Use email aliases for signups.</p>
@@ -371,7 +371,7 @@ const FeaturedCard = () => (
         <h3 style={{ fontFamily:"var(--fh)",fontSize:24,fontWeight:700,color:"#fff",marginBottom:6,letterSpacing:"-0.5px" }}>NordVPN — Best Overall VPN</h3>
         <p style={{ color:"#8B95A8",fontSize:15,marginBottom:14,fontFamily:"var(--fh)",fontWeight:400 }}>Fastest speeds in our testing, excellent security audit results, and works reliably with streaming services worldwide.</p>
         <div style={{ display:"flex",gap:24,marginBottom:16,flexWrap:"wrap" }}>
-          {[["9.6","/10 Score"],["6,400+","Servers"],["111","Countries"],["$3.09","/mo"]].map(([b,l])=>(
+          {[["9.6","/10 Score"],["7,200+","Servers"],["111","Countries"],["$3.39","/mo"]].map(([b,l])=>(
             <span key={l} style={{ fontFamily:"var(--fh)",fontSize:13,color:"#5A6478" }}><strong style={{ color:"var(--ac)" }}>{b}</strong>{l}</span>
           ))}
         </div>
