@@ -449,7 +449,7 @@ export default function ShieldRanked() {
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
         :root { --fh: 'Outfit', sans-serif; --ac: #00E5A0; }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body::before { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(30,41,59,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.3) 1px, transparent 1px); background-size:60px 60px; pointer-events:none; z-index:0; }
+        body::before { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(30,41,59,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.15) 1px, transparent 1px); background-size:60px 60px; pointer-events:none; z-index:-1; }
         @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
         .article-content { font-family: 'Outfit', sans-serif; font-size:16px; color:#8B95A8; line-height:1.75; font-weight:400; }
         .article-content h2 { font-family:var(--fh); font-size:24px; font-weight:700; color:#fff; margin:44px 0 16px; letter-spacing:-0.5px; }
