@@ -343,7 +343,7 @@ const EmailPopup = ({ show, onClose }) => {
   );
 };
 
-const Header = ({ onNav }) => (
+const Header = ({ onNav, activeFilter }) => (
   <header style={{ borderBottom:"1px solid #1E293B",background:"rgba(10,14,23,0.92)",backdropFilter:"blur(16px)",position:"sticky",top:0,zIndex:100 }}>
     <div style={{ maxWidth:1140,margin:"0 auto",padding:"14px 24px",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
       <div onClick={()=>onNav("home")} style={{ cursor:"pointer",display:"flex",alignItems:"center",gap:8 }}>
@@ -351,9 +351,14 @@ const Header = ({ onNav }) => (
         <span style={{ fontFamily:"var(--fh)",fontSize:20,fontWeight:800,color:"#E8ECF2",letterSpacing:"-0.5px" }}>ShieldPick</span>
       </div>
       <nav style={{ display:"flex",gap:6,alignItems:"center" }}>
-        <span onClick={()=>onNav("home")} style={{ fontFamily:"var(--fh)",color:"#8B95A8",fontSize:13,fontWeight:500,padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px" }}>VPNs</span>
-        <span onClick={()=>onNav("home")} style={{ fontFamily:"var(--fh)",color:"#8B95A8",fontSize:13,fontWeight:500,padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px" }}>Antivirus</span>
-        <span onClick={()=>onNav("home")} style={{ fontFamily:"var(--fh)",color:"#8B95A8",fontSize:13,fontWeight:500,padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px" }}>Passwords</span>
+        {[["VPNs","filter_vpn"],["Antivirus","filter_antivirus"],["Passwords","filter_passwords"]].map(([label,target])=>(
+          <span key={label} onClick={()=>onNav(target)} style={{
+            fontFamily:"var(--fh)",fontSize:13,fontWeight:activeFilter===target.replace("filter_","") ? 600 : 500,
+            padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px",
+            color: activeFilter===target.replace("filter_","") ? "#00E5A0" : "#8B95A8",
+            background: activeFilter===target.replace("filter_","") ? "rgba(0,229,160,0.1)" : "transparent"
+          }}>{label}</span>
+        ))}
         <span onClick={()=>onNav("page_methodology")} style={{ fontFamily:"var(--fh)",color:"#8B95A8",fontSize:13,fontWeight:500,padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px" }}>How We Test</span>
         <span onClick={()=>onNav("page_deals")} style={{ fontFamily:"var(--fh)",background:"var(--ac)",color:"#0A0E17",fontSize:13,fontWeight:600,padding:"6px 14px",borderRadius:6,cursor:"pointer" }}>Deals</span>
       </nav>
@@ -445,8 +450,22 @@ const Footer = ({ onNav }) => (
 // --- MAIN APP ---
 export default function ShieldPick() {
   const [page, setPage] = useState("home");
+  const [filter, setFilter] = useState("all");
   const [showPopup, setShowPopup] = useState(false);
   useEffect(()=>{const t=setTimeout(()=>setShowPopup(true),20000);return()=>clearTimeout(t);},[]);
+
+  const navigate = (target) => {
+    if (target === "home") { setPage("home"); setFilter("all"); }
+    else if (target.startsWith("filter_")) { setPage("home"); setFilter(target.replace("filter_","")); window.scrollTo(0,0); }
+    else { setPage(target); setFilter("all"); }
+  };
+
+  const filteredArticles = filter === "all" ? ARTICLES : ARTICLES.filter(a => {
+    if (filter === "vpn") return a.category === "VPN Reviews" || a.category === "Comparison" || a.category === "Guides";
+    if (filter === "antivirus") return a.category === "Antivirus";
+    if (filter === "passwords") return a.category === "Password Managers";
+    return true;
+  });
 
   return (
     <div style={{ minHeight:"100vh",background:"#0A0E17",color:"#E8ECF2" }}>
@@ -492,7 +511,7 @@ export default function ShieldPick() {
         }
       `}</style>
 
-      <Header onNav={setPage} />
+      <Header onNav={navigate} activeFilter={filter} />
 
       {page === "home" ? (<>
         {/* Hero */}
@@ -518,12 +537,20 @@ export default function ShieldPick() {
 
         {/* Section Header */}
         <div style={{ maxWidth:1140,margin:"0 auto",padding:"48px 24px 24px",display:"flex",alignItems:"baseline",justifyContent:"space-between" }}>
-          <h2 style={{ fontFamily:"var(--fh)",fontSize:22,fontWeight:700,color:"#fff",letterSpacing:"-0.5px" }}>Latest Reviews & Guides</h2>
+          <h2 style={{ fontFamily:"var(--fh)",fontSize:22,fontWeight:700,color:"#fff",letterSpacing:"-0.5px" }}>
+            {filter === "all" ? "Latest Reviews & Guides" : filter === "vpn" ? "VPN Reviews & Guides" : filter === "antivirus" ? "Antivirus Reviews" : "Password Manager Reviews"}
+          </h2>
+          {filter !== "all" && <span onClick={()=>navigate("home")} style={{ fontFamily:"var(--fh)",fontSize:13,color:"var(--ac)",cursor:"pointer" }}>View all →</span>}
         </div>
 
         {/* Article Grid */}
         <div style={{ maxWidth:1140,margin:"0 auto",padding:"0 24px 64px",display:"grid",gridTemplateColumns:"repeat(auto-fill, minmax(340px, 1fr))",gap:20 }}>
-          {ARTICLES.map((a,i)=><ArticleCard key={a.id} article={a} onNav={setPage} idx={i} />)}
+          {filteredArticles.length > 0 ? filteredArticles.map((a,i)=><ArticleCard key={a.id} article={a} onNav={navigate} idx={i} />) : (
+            <div style={{ gridColumn:"1/-1",textAlign:"center",padding:"60px 24px",color:"#5A6478",fontFamily:"var(--fh)" }}>
+              <p style={{ fontSize:18,marginBottom:12 }}>No articles in this category yet.</p>
+              <span onClick={()=>navigate("home")} style={{ color:"var(--ac)",cursor:"pointer" }}>← View all articles</span>
+            </div>
+          )}
         </div>
 
         {/* Newsletter */}
@@ -543,17 +570,17 @@ export default function ShieldPick() {
           window.scrollTo(0, 0);
           return (
             <div style={{ maxWidth:740,margin:"0 auto",padding:"48px 24px 80px" }}>
-              <button onClick={()=>setPage("home")} style={{ background:"none",border:"none",cursor:"pointer",fontFamily:"var(--fh)",fontSize:14,color:"var(--ac)",marginBottom:32,padding:0 }}>← Back to home</button>
+              <button onClick={()=>navigate("home")} style={{ background:"none",border:"none",cursor:"pointer",fontFamily:"var(--fh)",fontSize:14,color:"var(--ac)",marginBottom:32,padding:0 }}>← Back to home</button>
               <h1 style={{ fontFamily:"var(--fh)",fontSize:"clamp(28px,4vw,38px)",fontWeight:800,lineHeight:1.2,letterSpacing:"-1px",color:"#fff",marginBottom:24 }}>{staticPage.title}</h1>
               <div className="article-content" dangerouslySetInnerHTML={{ __html: staticPage.content }} />
             </div>
           );
         })()
       ) : (
-        <ArticlePage id={page} onNav={setPage} onPopup={()=>setShowPopup(true)} />
+        <ArticlePage id={page} onNav={navigate} onPopup={()=>setShowPopup(true)} />
       )}
 
-      <Footer onNav={setPage} />
+      <Footer onNav={navigate} />
       <EmailPopup show={showPopup} onClose={()=>setShowPopup(false)} />
     </div>
   );
