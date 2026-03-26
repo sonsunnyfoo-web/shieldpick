@@ -146,9 +146,9 @@ export const STATIC_PAGES = {
       <div class="product-box">
         <div class="product-rank">🔥</div>
         <div class="product-info">
-          <h3>NordVPN — 74% Off</h3>
+          <h3>NordVPN — 72% Off</h3>
           <div class="product-subtitle">Best Overall Deal</div>
-          <p>2-year plan at $3.39/month (was $11.99). Includes Threat Protection, 6 simultaneous devices, and 30-day money-back guarantee. Our #1 rated VPN.</p>
+          <p>2-year plan at $3.09/month (was $11.99). Includes Threat Protection, 6 simultaneous devices, and 30-day money-back guarantee. Our #1 rated VPN.</p>
           <p><strong>Score: 9.6/10</strong></p>
           <a href="#affiliate" class="btn-aff">Get This Deal →</a>
         </div>
@@ -157,9 +157,9 @@ export const STATIC_PAGES = {
       <div class="product-box">
         <div class="product-rank">💰</div>
         <div class="product-info">
-          <h3>Surfshark — 87% Off</h3>
+          <h3>Surfshark — 81% Off</h3>
           <div class="product-subtitle">Best Value Deal</div>
-          <p>2-year plan at $1.99/month (was $12.95). Unlimited devices, CleanWeb ad blocker, and 30-day money-back guarantee. Best for families.</p>
+          <p>2-year plan at $2.49/month (was $12.95). Unlimited devices, CleanWeb ad blocker, and 30-day money-back guarantee. Best for families.</p>
           <p><strong>Score: 9.2/10</strong></p>
           <a href="#affiliate" class="btn-aff">Get This Deal →</a>
         </div>
@@ -168,9 +168,9 @@ export const STATIC_PAGES = {
       <div class="product-box">
         <div class="product-rank">⚡</div>
         <div class="product-info">
-          <h3>ExpressVPN — 73% Off</h3>
+          <h3>ExpressVPN — 49% Off</h3>
           <div class="product-subtitle">Best for Streaming</div>
-          <p>1-year plan at $3.49/month (was $12.95). Includes 3 months free. Unblocks every streaming platform. Premium experience.</p>
+          <p>1-year plan at $6.67/month (was $12.95). Includes 3 months free. Unblocks every streaming platform. Premium experience.</p>
           <p><strong>Score: 9.0/10</strong></p>
           <a href="#affiliate" class="btn-aff">Get This Deal →</a>
         </div>
@@ -181,7 +181,7 @@ export const STATIC_PAGES = {
         <div class="product-info">
           <h3>ProtonVPN — 50% Off</h3>
           <div class="product-subtitle">Best for Privacy</div>
-          <p>2-year plan at $3.99/month. Swiss-based, open source, independently audited. Also has a legitimate free tier (the only free VPN we recommend).</p>
+          <p>2-year plan at $4.49/month. Swiss-based, open source, independently audited. Also has a legitimate free tier (the only free VPN we recommend).</p>
           <p><strong>Score: 8.8/10</strong></p>
           <a href="#affiliate" class="btn-aff">Get This Deal →</a>
         </div>
