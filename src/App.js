@@ -90,7 +90,7 @@ function ArticleCard({ article, idx }) {
       <div style={{ padding:"18px 22px 22px",flex:1,display:"flex",flexDirection:"column" }}>
         <span style={{ fontFamily:"'JetBrains Mono',monospace",fontSize:10,fontWeight:500,textTransform:"uppercase",letterSpacing:1.2,color:"#00E5A0",background:"rgba(0,229,160,0.12)",padding:"3px 10px",borderRadius:4,marginBottom:10,width:"fit-content" }}>{article.category}</span>
         <h2 style={{ fontFamily:"var(--fh)",fontSize:18,fontWeight:600,lineHeight:1.35,marginBottom:8,letterSpacing:"-0.3px",color:"#fff" }}>{article.title}</h2>
-        <p style={{ color:"#8B95A8",fontSize:14,lineHeight:1.6,marginBottom:14,flex:1,fontFamily:"var(--fh)",fontWeight:400 }}>{article.excerpt}</p>
+        <p style={{ color:"#C0C5D0",fontSize:14,lineHeight:1.6,marginBottom:14,flex:1,fontFamily:"var(--fh)",fontWeight:400 }}>{article.excerpt}</p>
         <div style={{ fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:"#5A6478",borderTop:"1px solid #1E293B",paddingTop:12,display:"flex",justifyContent:"space-between" }}>
           <span>{article.date}</span><span>{article.readTime}</span>
         </div>
@@ -264,7 +264,7 @@ export default function App() {
         body::before { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(30,41,59,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.12) 1px, transparent 1px); background-size:60px 60px; pointer-events:none; z-index:-1; }
         a:hover { opacity:0.9; }
         @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-        .article-content { font-family: 'Outfit', sans-serif; font-size:16px; color:#8B95A8; line-height:1.75; font-weight:400; }
+        .article-content { font-family: 'Outfit', sans-serif; font-size:16px; color:#D0D5E0; line-height:1.75; font-weight:400; }
         .article-content h2 { font-family:var(--fh); font-size:24px; font-weight:700; color:#fff; margin:44px 0 16px; letter-spacing:-0.5px; }
         .article-content h3 { font-family:var(--fh); font-size:20px; font-weight:700; color:#fff; margin:8px 0 4px; }
         .article-content p { margin-bottom:20px; }
@@ -274,7 +274,7 @@ export default function App() {
         .article-content .table-wrap { border:1px solid #1E293B; border-radius:10px; overflow:hidden; overflow-x:auto; margin:24px 0; }
         .article-content table { width:100%; border-collapse:collapse; font-size:14px; }
         .article-content th { background:#111827; padding:14px 18px; text-align:left; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.8px; color:#5A6478; border-bottom:1px solid #1E293B; }
-        .article-content td { padding:14px 18px; border-bottom:1px solid #1E293B; color:#8B95A8; }
+        .article-content td { padding:14px 18px; border-bottom:1px solid #1E293B; color:#C8CDD8; }
         .article-content tr:last-child td { border-bottom:none; }
         .article-content .product-name { color:#fff; font-weight:600; }
         .article-content .score { font-family:'JetBrains Mono',monospace; color:#00E5A0; font-weight:500; }
@@ -294,7 +294,7 @@ export default function App() {
         .article-content .cta-row { display:flex; gap:8px; margin-top:24px; flex-wrap:wrap; }
         .article-content .faq { border-bottom:1px solid #1E293B; padding:20px 0; }
         .article-content .faq strong { color:#fff; font-size:16px; display:block; margin-bottom:8px; }
-        .article-content .faq p { color:#8B95A8; font-size:15px; margin:0; }
+        .article-content .faq p { color:#C8CDD8; font-size:15px; margin:0; }
         @media(max-width:768px) {
           .article-content .product-box { flex-direction:column; }
           .article-content .pros-cons { flex-direction:column; }
