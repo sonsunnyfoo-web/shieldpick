@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { STATIC_PAGES } from "./pages";
 
 // ============================================================
 // SHIELDBYTE — VPN & Cybersecurity Affiliate Blog
@@ -350,10 +351,11 @@ const Header = ({ onNav }) => (
         <span style={{ fontFamily:"var(--fh)",fontSize:20,fontWeight:800,color:"#E8ECF2",letterSpacing:"-0.5px" }}>ShieldPick</span>
       </div>
       <nav style={{ display:"flex",gap:6,alignItems:"center" }}>
-        {["VPNs","Antivirus","Passwords","Guides"].map(t=>(
-          <span key={t} onClick={()=>onNav("home")} style={{ fontFamily:"var(--fh)",color:"#8B95A8",fontSize:13,fontWeight:500,padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px" }}>{t}</span>
-        ))}
-        <span onClick={()=>onNav("home")} style={{ fontFamily:"var(--fh)",background:"var(--ac)",color:"#0A0E17",fontSize:13,fontWeight:600,padding:"6px 14px",borderRadius:6,cursor:"pointer" }}>Deals</span>
+        <span onClick={()=>onNav("home")} style={{ fontFamily:"var(--fh)",color:"#8B95A8",fontSize:13,fontWeight:500,padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px" }}>VPNs</span>
+        <span onClick={()=>onNav("home")} style={{ fontFamily:"var(--fh)",color:"#8B95A8",fontSize:13,fontWeight:500,padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px" }}>Antivirus</span>
+        <span onClick={()=>onNav("home")} style={{ fontFamily:"var(--fh)",color:"#8B95A8",fontSize:13,fontWeight:500,padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px" }}>Passwords</span>
+        <span onClick={()=>onNav("page_methodology")} style={{ fontFamily:"var(--fh)",color:"#8B95A8",fontSize:13,fontWeight:500,padding:"6px 14px",borderRadius:6,cursor:"pointer",transition:"all 0.2s",letterSpacing:"0.2px" }}>How We Test</span>
+        <span onClick={()=>onNav("page_deals")} style={{ fontFamily:"var(--fh)",background:"var(--ac)",color:"#0A0E17",fontSize:13,fontWeight:600,padding:"6px 14px",borderRadius:6,cursor:"pointer" }}>Deals</span>
       </nav>
     </div>
   </header>
@@ -423,12 +425,15 @@ const ArticlePage = ({ id, onNav, onPopup }) => {
   );
 };
 
-const Footer = () => (
+const Footer = ({ onNav }) => (
   <footer style={{ borderTop:"1px solid #1E293B",padding:"40px 24px",textAlign:"center" }}>
     <div style={{ maxWidth:1140,margin:"0 auto" }}>
       <div style={{ display:"flex",justifyContent:"center",gap:24,marginBottom:16,flexWrap:"wrap" }}>
-        {["About","How We Test","Privacy Policy","Affiliate Disclosure","Contact"].map(t=>(
-          <span key={t} style={{ fontFamily:"var(--fh)",fontSize:13,color:"#5A6478",cursor:"pointer" }}>{t}</span>
+        {[["About","page_about"],["How We Test","page_methodology"],["Privacy Policy","page_privacy"],["Affiliate Disclosure","page_disclosure"],["Deals","page_deals"]].map(([label,target])=>(
+          <span key={label} onClick={()=>onNav(target)} style={{ fontFamily:"var(--fh)",fontSize:13,color:"#5A6478",cursor:"pointer",transition:"color 0.2s" }}
+            onMouseEnter={e=>e.currentTarget.style.color="#00E5A0"}
+            onMouseLeave={e=>e.currentTarget.style.color="#5A6478"}
+          >{label}</span>
         ))}
       </div>
       <div style={{ fontFamily:"var(--fh)",fontSize:12,color:"#5A6478" }}>© 2026 ShieldPick. All rights reserved.</div>
@@ -529,11 +534,26 @@ export default function ShieldPick() {
             <button onClick={()=>setShowPopup(true)} style={{ fontFamily:"var(--fh)",background:"var(--ac)",color:"#0A0E17",border:"none",padding:"13px 28px",borderRadius:8,fontSize:14,fontWeight:600,cursor:"pointer" }}>Get the Free Security Guide →</button>
           </div>
         </section>
-      </>) : (
+      </>) : page.startsWith("page_") ? (
+        /* Static Pages (About, Privacy, Disclosure, Methodology, Deals) */
+        (() => {
+          const pageKey = page.replace("page_", "");
+          const staticPage = STATIC_PAGES[pageKey];
+          if (!staticPage) return <div style={{padding:"80px 24px",textAlign:"center",color:"#8B95A8"}}>Page not found</div>;
+          window.scrollTo(0, 0);
+          return (
+            <div style={{ maxWidth:740,margin:"0 auto",padding:"48px 24px 80px" }}>
+              <button onClick={()=>setPage("home")} style={{ background:"none",border:"none",cursor:"pointer",fontFamily:"var(--fh)",fontSize:14,color:"var(--ac)",marginBottom:32,padding:0 }}>← Back to home</button>
+              <h1 style={{ fontFamily:"var(--fh)",fontSize:"clamp(28px,4vw,38px)",fontWeight:800,lineHeight:1.2,letterSpacing:"-1px",color:"#fff",marginBottom:24 }}>{staticPage.title}</h1>
+              <div className="article-content" dangerouslySetInnerHTML={{ __html: staticPage.content }} />
+            </div>
+          );
+        })()
+      ) : (
         <ArticlePage id={page} onNav={setPage} onPopup={()=>setShowPopup(true)} />
       )}
 
-      <Footer />
+      <Footer onNav={setPage} />
       <EmailPopup show={showPopup} onClose={()=>setShowPopup(false)} />
     </div>
   );
